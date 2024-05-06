@@ -1,2 +1,2 @@
-# CatchIT!
-CatchIT! IPTV is a Windows IPTV Player
+# Catch!
+Catch! IPTV is a Windows IPTV Player
