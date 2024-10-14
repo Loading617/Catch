@@ -1,15 +1,29 @@
 import iptv 
+from iptv
+import Stream, Provider
 
-    # Load the list of channels from the specified file
-    channels = iptv.load_channels("channels.txt")
+# Create a provider
 
-    # Sort the channels by name in ascending order
-    channels.sort(key=lambda x: x.name)
+provider = Provider.iptvProvider()
 
-    # Print the list of channels
-    print("Available Channels:")
-    for channel in channels:
-        print(f"{channel.number}. {channel.name}")
-        print(f"  - URL: {channel.url}")
-        print(f"  - Description: {channel.description}")
-        print()
+# Add your favorite IPTV channels
+
+provider.add_channel("Your Channel 1", "https://example.com/channel1.m3u8")
+provider.add_channel("Your Channel 2", "https://example.com/channel2.m3u8")
+
+# Fetch all streams
+
+streams = provider.fetch_streams()
+
+# Print all streams
+
+for stream in streams:
+    print(f"Title: {stream.title}, URL: {stream.url}")
+
+    # You can also save streams to a file
+
+    stream.save_to_file("output.mp4")
+    print(f"Saved {stream.title} to output.mp4")
+    print()
+    print("---------------------------------")
+    print()
