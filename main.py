@@ -1,29 +1,17 @@
-import iptv 
-from iptv
-import Stream, Provider
+   import wx
 
-# Create a provider
+   class MyFrame(wx.Frame):
+       def __init__(self, parent, title):
+           super().__init__(parent, title=title, size=(300, 200))
+           self.panel = wx.Panel(self)
+           self.button = wx.Button(self.panel, label="Click me")
+           self.button.Bind(wx.EVT_BUTTON, self.on_click)
 
-provider = Provider.iptvProvider()
+       def on_click(self, event):
+           wx.MessageBox("Hello from wxPython!", "Message", wx.OK | wx.ICON_INFORMATION)
 
-# Add your favorite IPTV channels
-
-provider.add_channel("Your Channel 1", "https://example.com/channel1.m3u8")
-provider.add_channel("Your Channel 2", "https://example.com/channel2.m3u8")
-
-# Fetch all streams
-
-streams = provider.fetch_streams()
-
-# Print all streams
-
-for stream in streams:
-    print(f"Title: {stream.title}, URL: {stream.url}")
-
-    # You can also save streams to a file
-
-    stream.save_to_file("output.mp4")
-    print(f"Saved {stream.title} to output.mp4")
-    print()
-    print("---------------------------------")
-    print()
+   if __name__ == '__main__':
+       app = wx.App()
+       frame = MyFrame(None, "My wxPython App")
+       frame.Show()
+       app.MainLoop()
