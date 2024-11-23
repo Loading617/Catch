@@ -7,6 +7,8 @@
            self.SetSize(self.FromDIP(wx.Size(400, 300)))
            self.panel = wx.Panel(self)
 
+           self.text = wxStaticText(self.panel, label="Hello, wxPython!")
+
            self.Show(True)
            
 class MyApp(wx.App):
