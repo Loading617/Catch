@@ -4,6 +4,9 @@
        def __init__(self, parent, title):
            super(MyFrame, self).__init__(parent, title=title)
 
+           self.SetSize(self.FromDIP(wx.Size(400, 300)))
+           self.panel = wx.Panel(self)
+
            self.Show(True)
            
 class MyApp(wx.App):
