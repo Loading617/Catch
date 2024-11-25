@@ -21,6 +21,7 @@ text = wx.StaticText(panel, label="Hello World", size=(100, 100), pos=(100, 100)
 frameSetBackgroundColour("#ffce00")
 frameSetForegroundColour("#ff4d00")
 
+application_bitmap = wx.ApplicationBitmap
 image = wx.StaticBitmap(panel)
 
 frame.Center()
