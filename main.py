@@ -24,7 +24,10 @@ class MyFrame(wx.Frame):
            self.Show(True)
            
         def OnButtonClick(self, event):
-            wx.MessageBox("Hello!", "Message", wx.OK)   
+            dialog = wx.FileDialog(self, "Open File", style=wx.FD_OPEN | wx.FILE_MUST_EXIST
+                                   wildcard= "Video files (*.mp4)|*.mp4")
+            if dialog.ShowModal() == wx.ID_OK:
+               wx.MessageBox("Success", "Info", wx.OK)    
 
 class MyApp(wx.App):
    def OnInit(self):
