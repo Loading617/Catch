@@ -10,6 +10,11 @@
            self.text = wxStaticText(self.panel, label="Hello, wxPython!")
 
            self.sizer = wx.BoxSizer(wx.VERTICAL)
+           self.sizer.AddStretchSpacer()
+           self.sizer.Add(self.text, 0, wx.ALIGN_CENTER)
+           self.sizer.AddStretchSpacer()
+
+           self.panel.SetSizer(self.sizer)
 
            self.Show(True)
            
