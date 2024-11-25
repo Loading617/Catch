@@ -17,7 +17,7 @@ class MyFrame(wx.Frame):
 
            self.sizer = wx.BoxSizer(wx.VERTICAL)
            self.sizer.Add(self.fileContents, 1, wx.EXPAND)
-           self.sizer.Add(self.button, 0, wx.ALIGN_CENTER)
+           self.sizer.Add(self.button, 0, wx.ALIGN_CENTER | wx.ALL, self.FromDIP(10))
            self.sizer.AddStretchSpacer()
 
            self.panel.SetSizer(self.sizer)
