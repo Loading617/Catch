@@ -1,4 +1,5 @@
 import wx
+from utils import ensure_hdpi
 
 app = wx.app()
 
