@@ -1,5 +1,5 @@
    import wx
-
+   from utils import ensure_hdpi
    class MyFrame(wx.Frame):
        def __init__(self, parent, title):
            super(MyFrame, self).__init__(parent, title=title)
@@ -9,10 +9,15 @@
 
            self.text = wxStaticText(self.panel, label="Hello, wxPython!")
 
+           self.sizer = wx.BoxSizer(wx.VERTICAL)
+
            self.Show(True)
            
 class MyApp(wx.App):
    def OnInit(self):
+       
+       ensure_hdpi()
+
        frame = MyFrame(None, "My wxPython App")
        frame.Show()
        return True
