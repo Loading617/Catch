@@ -7,15 +7,16 @@ class MyFrame(wx.Frame):
            self.SetSize(self.FromDIP(wx.Size(400, 300)))
            self.panel = wx.Panel(self)
 
+           self.fileContents = wx.TextCtrl(self.panel, style=wx.TE_MULTILINE)
+           self.button = wx.Button(self.panel, label="Open File")
+
            self.text = wxStaticText(self.panel, label="Hello, wxPython!")
-           self.button = wx.Button(self.panel, label="Click!")
+
 
            self.Bind(wx.EVT_BUTTON, self.on_click, self.button)
 
            self.sizer = wx.BoxSizer(wx.VERTICAL)
-           self.sizer.AddStretchSpacer()
-           self.sizer.Add(self.text, 0, wx.ALIGN_CENTER)
-           self.sizer.AddStretchSpacer()
+           self.sizer.Add(self.fileContents, 1, wx.EXPAND)
            self.sizer.Add(self.button, 0, wx.ALIGN_CENTER)
            self.sizer.AddStretchSpacer()
 
