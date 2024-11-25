@@ -1,6 +1,6 @@
-   import wx
-   from utils import ensure_hdpi
-   class MyFrame(wx.Frame):
+import wx
+from utils import ensure_hdpi
+class MyFrame(wx.Frame):
        def __init__(self, parent, title):
            super(MyFrame, self).__init__(parent, title=title)
 
@@ -8,16 +8,24 @@
            self.panel = wx.Panel(self)
 
            self.text = wxStaticText(self.panel, label="Hello, wxPython!")
+           self.button = wx.Button(self.panel, label="Click!")
+
+           self.Bind(wx.EVT_BUTTON, self.on_click, self.button)
 
            self.sizer = wx.BoxSizer(wx.VERTICAL)
            self.sizer.AddStretchSpacer()
            self.sizer.Add(self.text, 0, wx.ALIGN_CENTER)
+           self.sizer.AddStretchSpacer()
+           self.sizer.Add(self.button, 0, wx.ALIGN_CENTER)
            self.sizer.AddStretchSpacer()
 
            self.panel.SetSizer(self.sizer)
 
            self.Show(True)
            
+        def OnButtonClick(self, event):
+            wx.MessageBox("Hello!", "Message", wx.OK)   
+
 class MyApp(wx.App):
    def OnInit(self):
        
