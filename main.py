@@ -22,8 +22,8 @@ text = wx.StaticText(panel, label="Hello World", size=(100, 100), pos=(100, 100)
 frameSetBackgroundColour("#ffce00")
 frameSetForegroundColour("#ff4d00")
 
-application_bitmap = wx.ApplicationBitmap
-image = wx.StaticBitmap(panel)
+application_bitmap = wx.ApplicationBitmap("Catch!.ico")
+image = wx.StaticBitmap(panel, bitmap=application_bitmap, pos=(150,0))
 
 frame.Center()
 frame.Show()
