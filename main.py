@@ -29,7 +29,12 @@ class MyFrame(wx.Frame):
                                    wildcard= "Video files (*.mp4)|*.mp4")
             if dialog.ShowModal() == wx.ID_OK:
                wx.MessageBox("Success", "Info", wx.OK)    
-
+                try:
+                    with open(dialog.GetPath()), 'r') as file:
+                        self.fileContents.SetValue(file.read())
+            except Exception as e:
+                wx.MessageBox(str(e), "Error", wx.OK | wx.ICON_ERROR)
+            
 class MyApp(wx.App):
    def OnInit(self):
        
