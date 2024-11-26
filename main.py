@@ -13,14 +13,11 @@ panel = wx.Panel(frame)
 
 current_font = panel.GetFont()
 current_font.SetPointSize(16)
-current_font.SetUnderlined(True)
 current_font.SetWeight(wx.FONTWEIGHT_BOLD)
 current_font
 panel.SetFont(current_font)
 
 text = wx.StaticText(panel, label="Hello World", size=(100, 100), pos=(100, 100))
-frameSetBackgroundColour("#ffce00")
-frameSetForegroundColour("#ff4d00")
 
 application_bitmap = wx.ApplicationBitmap("Catch!.ico")
 image = wx.StaticBitmap(panel, bitmap=application_bitmap, pos=(150,0))
