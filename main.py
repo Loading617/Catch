@@ -17,8 +17,6 @@ current_font.SetWeight(wx.FONTWEIGHT_BOLD)
 current_font
 panel.SetFont(current_font)
 
-text = wx.StaticText(panel, label="Hello World", size=(100, 100), pos=(100, 100))
-
 application_bitmap = wx.ApplicationBitmap("Catch!.ico")
 image = wx.StaticBitmap(panel, bitmap=application_bitmap, pos=(150,0))
 
