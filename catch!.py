@@ -1,9 +1,3 @@
-pip install python-vlc
-pip install python-kodi
-pip install python-windowsmediaplayer
-pip install python-mediaplayer2022
-pip install m3u8
-pip install m3u
 import m3u8
 import m3u
 
