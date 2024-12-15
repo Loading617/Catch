@@ -1,8 +1,8 @@
-import tkinter as tk
+import customtkinter as ctk
 
-root = tk.Tk()
-
-root.geometry("500x500")
+root = ctk.CTk()
 root.title("Catch!")
+
+root.geometry("800x600")
 
 root.mainloop()
