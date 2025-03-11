@@ -1,5 +1,5 @@
 <p align="center">
-        <img src="Catch!.png" width="200" height="200" alt="Catch!">
+        <img src=".png" width="200" height="200" alt="Catch!">
 </p>        
 
 # Catch!
